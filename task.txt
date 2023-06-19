@@ -1,0 +1,100 @@
+1.      Ansible Assessment:
+Through this assessment you will prove your ability to host applications in virtual machines (Cloud or On-prem) and Docker Containers with help of Ansible by configuring and installing given application on the virtual servers and Docker Container. While doing you will also have to perform some activities like setting up connections between machines/container using SSH and network and configuring Load Balancer (of your choice) which will help us assess your skills on that as well.
+
+Pre-Requisites
+Vagrant (Latest: here)
+Oracle VirtualBox (Latest: here)
+Docker, Docker Compose.
+Ansible
+Terraform
+Environment to run shell script (To run Ansible with SSH)
+Instructions.
+This assessment is crafted with two different compute environments.
+
+Vagrant and Virtualbox that will provide you virtual machine Infrastructure on your local machine.
+“docker-compose.yml” file that will provide you containers on your local machine and with these, you are going to perform following activities.
+Simply follow the instructions.
+
+Clone our Assessment Repository (https://github.com/prabhuvigneshelanco/devops-assignment.git)
+Go into the devops-assignment folder.
+You need to create ssh key pair with have-a-key.sh file. so run chmod +x have-a-key.sh.
+Then run ./have-a-key.sh.
+This will create two files called id_rsa and id_rsa.pub.
+To have Containers, install docker.
+Then run docker-compose up -d It will give you 3 Containers running (2 Web Servers and One Load Balancer).
+All the containers are configured with a user “sshuser” and it will use the key pair for authentication. Read the docker-compose.yml file for more details.
+Then run Command “vagrant up” to spin up 3 virtual machines (2 Web servers and One Load Balancer).
+You can ssh into the machines into using commands like “vagrant ssh webserver1” or “vagrant ssh webserver2” or “vagrant ssh loadbalancer” or using regular SSH command. (“ssh vagrant@<IP address>” ).
+VMs are configured with user “vagrant” and password “vagrant”.
+Now you are ready for Ansible Assessment.
+What is expected?
+This Assessment will help you create 3 virtual machines and 3 Containers.
+
+2 Virtual Machines/2 Containers are to host Web application.
+1 Virtual Machine/Containers are to host Load Balancer.
+Use your Host machine as Ansible Workstation.
+ 
+
+
+
+ 
+
+ 
+
+Create Ansible Playbook and perform the following operations:
+
+ 
+
+Install and configure the Web Server (Your Choice)  on Web machines (2 VMs and 2 Containers).
+Install Load Balancer (Your Choice of tool) on Loadbalancing machine (1 VM and 1 container) between the two Web Server (Your Choice) configured above.
+You need to configure web server and Load balancer.
+You need to clone the Sample JavaScript application and deploy it on the Web Servers (2 VMs and 2 Containers). Read README.md file for starting the node server.
+Configure Load Balancer to route traffic between 2 Web Servers.
+If you hit IP address of LoadBalancer, It should show the webpage of either web-1 or web-2. (Both VMs and Containers)
+NOTE: Remember, The Assessment Utility will create only 3 VMs and 3 containers. It’s up to you to configure connection between Host and Guest machines or Containers to make Ansible work.
+
+ 
+Assessment factors.
+Below are the points we are going to consider while assessing your assignment.
+
+Primary Factor:
+Application should work. If you hit IP address of LoadBalancer, It should show the webpage of either web-1 or web-2. (Both VMs and Containers)
+Secondary Factor:
+Ability to understand the requirement.
+Ability to configure SSH connection between VMs and Container. (It will show your basic Network Knowledge )
+Ability to install and configure web applications (NodeJS) Using Ansible. (This will show knowledge on Application deployment)
+Ability to configure Load Balancer Using Ansible. (This will show knowledge on Load Balancing and traffic routing).
+Ability to work with containers, container networks, docker-compose and debugging (This will showcase your knowledge on containers and its network)
+Best Practices and coding etiquette followed.
+Subject Knowledge – Ansible, Web Application Configurations, Load Balancing and Networks, Containers.
+Troubleshooting and modifying the utility while you get stuck.
+NOTE:
+
+This Utility is Just to give you the skeleton on the Infrastructure. You can modify/add more to achieve the primary expectation. But make sure you showcase the skills by preforming Secondary Factor as it will be the deciding factor.
+ 
+
+2.      Terraform Assessment
+Through this assessment you will prove your ability to create cloud Infrastructure with Terraform including creating Virtual Machines, Database, Network, Security, storage configurations.
+
+What is expected?
+Create a 3 of Virtual Machines (VMs), Relational Database (DB), Subnet, firewall,  and Create VPC on given Cloud provider (Use Mock Provider or GCP Provider).
+Name the VMs and Relational Database by suffixing Random Numbers. (Example: “Test-VM-23363”). And the Random Number should not repeat (Unique Random Number).
+Make sure, VMs and DB are in the same network (VPC).
+Create Public and Private Subnet and assign 2 Virtual Machine in Private Subnet and 1 Virtual Machine in Public Subnet.
+Create firewall and allow only 80 and 443 ports.
+Create persistent storage and attach with VM.
+Assume we are going to host Web applications with RDB on the given cloud providers (Use Mock Provider for GCP).
+Assessment factors.
+Ability to understand the requirements.
+Ability to write Terraform scripts.
+Use of Best Practices and Coding etiquette.
+Subject Knowledge - Terraform, Cloud Infra, Cloud Networks, Storage, firewall.
+ 
+
+ 
+
+Request you to please complete this test by Thursday and share it with me.
+
+ 
+
+You can reach out to me if you need any further assistance.
